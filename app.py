@@ -5,6 +5,10 @@ import os
 app = Flask(__name__)
 model = whisper.load_model("base")
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"text": "is alive"})
+
 @app.route('/transcribe', methods=['POST'])
 def transcribe():
     file = request.files['file']
