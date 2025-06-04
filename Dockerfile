@@ -53,5 +53,6 @@ COPY . .
 EXPOSE 5005
 
 # Run the application.
-CMD gunicorn 'app:app' --bind=0.0.0.0:5005
+# CMD python app.py
+CMD gunicorn 'app:app' --bind=0.0.0.0:5005 --timeout 300
 
